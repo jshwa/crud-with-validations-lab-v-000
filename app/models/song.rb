@@ -1,6 +1,7 @@
 class Song < ActiveRecord::Base
   validates :title, :artist_name, presence: true
   validates :released, inclusion: {in: [true, false]}
+  validates :release_year, inclusion: {in: [1...Time.now.year]}
   validates :release_year, presence: true if: :released?
   validate :title_year_check
 
@@ -14,5 +15,5 @@ class Song < ActiveRecord::Base
     end
   end
 
-  
+
 end
