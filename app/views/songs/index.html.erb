@@ -1,5 +1,9 @@
 <h1>Songs</h1>
 
+<table>
 <% @songs.each do |song| %>
-   <%= song.title %>
+  <tr>
+     <td><%= song.title %></td>
+  </tr>
 <% end %>
+</table>
