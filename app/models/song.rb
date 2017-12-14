@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
   validates :title, :artist_name, presence: true
   validates :released, inclusion: {in: [true, false]}
-  validates :release_year, inclusion: {in: [1...Time.now.year]}, if: :released?
+  validates :release_year, inclusion: {in: [1..Time.now.year]}, if: :released?
   validates :release_year, presence: true, if: :released?
   validate :title_year_check
 
@@ -14,6 +14,5 @@ class Song < ActiveRecord::Base
       errors.add(:title, "cannot be repeated by the same artist in the same year")
     end
   end
-
 
 end
