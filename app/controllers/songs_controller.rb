@@ -10,7 +10,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    binding.pry
     @song = Song.create(song_params)
     if @song.errors.any?
       render :new
