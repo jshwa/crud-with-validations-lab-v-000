@@ -10,6 +10,7 @@ class SongsController < ApplicationController
   end
 
   def create
+    binding.pry
     @song = Song.create(song_params)
     if @song.errors.any?
       render :new
