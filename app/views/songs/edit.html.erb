@@ -1,14 +1,10 @@
 <h1>Edit Song Form</h1>
 
-<% if @song.errors.any? %>
-  
-<% end %>
-
 <%= form_for @song do |s| %>
 <%= s.label :title %>
 <%= s.text_field :title %>
 <%= s.label :released %>
-<%= s.text_field :released %>
+<%= s.check_box :released %>
 <%= s.label :release_year %>
 <%= s.text_field :release_year %>
 <%= s.label :artist_name %>
