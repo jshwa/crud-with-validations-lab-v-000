@@ -10,6 +10,7 @@ class SongsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     @song = Song.create(song_params)
     if @song.errors.any?
       render :new
